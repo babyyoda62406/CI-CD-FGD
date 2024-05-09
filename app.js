@@ -33,7 +33,7 @@ app.post('/teodoro', (req, res) => {
 });
 
 const CICD_teodoro = (callback) => {
-    exec('cd /root/totalrepairs   && git stash && git pull --hard && pnpm install && npm run build && pm2 restart teodoro', callback);
+    exec('cd /root/totalrepairs   && git stash && git reset --hard origin/v1 && pnpm install && npm run build && pm2 restart teodoro', callback);
 }
 
 
